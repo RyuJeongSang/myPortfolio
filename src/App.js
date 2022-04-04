@@ -1,8 +1,12 @@
 import React from "react";
-import { Parallax } from "./components/Parallax";
+import { MainRouters } from "./routers/main-routers";
 
 const App = () => {
-    return <Parallax />;
+  return (
+    <>
+      <MainRouters />
+    </>
+  );
 };
 
 export default App;
