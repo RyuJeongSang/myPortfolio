@@ -21,6 +21,7 @@ const HeaderContainer = styled.div`
   padding: 0 40px;
   font-family: "Kirang Haerang", cursive;
   font-size: 24px;
+  z-index: 1;
 `;
 
 const TextA = styled(Link)`
