@@ -65,7 +65,7 @@ const MainContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: purple;
+  background-color: #b7cadb;
   transform: ${props => (props.positionYA > 800 ? `translateY(800px)` : `translateY(0px)`)};
   overflow: hidden;
 `;
