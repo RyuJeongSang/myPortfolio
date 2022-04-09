@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { MainHeader } from "../components/organisms/main-header";
+import { SideBar } from "../components/organisms/side-bar";
 
 export const Home = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -29,6 +30,7 @@ export const Home = () => {
         <title>home</title>
       </Helmet>
       <MainHeader />
+      <SideBar />
       <HomeContainer>
         <MainContainer positionYA={offsetY}>
           <MainGreeting>

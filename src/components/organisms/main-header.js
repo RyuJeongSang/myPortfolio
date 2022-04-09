@@ -19,9 +19,10 @@ const HeaderContainer = styled.div`
   height: 40px;
   background-color: #fff;
   padding: 0 40px;
-  font-family: "Kirang Haerang", cursive;
-  font-size: 24px;
-  z-index: 1;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 2;
 `;
 
 const TextA = styled(Link)`
