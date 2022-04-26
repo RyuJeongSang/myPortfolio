@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { MainHeader } from "../components/organisms/main-header";
-import { SideBar } from "../components/organisms/side-bar";
 
 export const Home = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -27,21 +26,28 @@ export const Home = () => {
   return (
     <>
       <Helmet>
-        <title>home</title>
+        <title>RyuJeongSang</title>
       </Helmet>
       <MainHeader />
-      <SideBar />
       <HomeContainer>
         <MainContainer positionYA={offsetY}>
-          <MainGreeting>
-            <MainGreetingText positionYA={offsetY}>안녕하세요, 저는 류정상입니다.</MainGreetingText>
-          </MainGreeting>
-          <MainGreeting>
-            <MainGreetingText positionYA={offsetY}>저는 프론트엔드 개발자입니다.</MainGreetingText>
-          </MainGreeting>
+          <GreetingContainer>
+            <MainGreeting>
+              <MainGreetingText positionYA={offsetY}>
+                안녕하세요, 저는 류정상입니다.
+              </MainGreetingText>
+            </MainGreeting>
+            <MainGreeting>
+              <MainGreetingText positionYA={offsetY}>
+                저는 프론트엔드 개발자입니다.
+              </MainGreetingText>
+              <GreetingButton>button</GreetingButton>
+            </MainGreeting>
+          </GreetingContainer>
           <MainTitle positionYA={offsetY}>
             {/* 이동할 컨테이너 */}
-            <MainTitleText>THANKS FOR COMING!</MainTitleText>
+            <MainTitleText>THANKS FOR COMING</MainTitleText>
+            <MainTitleTextPortfolio>MY PORTFOLIO</MainTitleTextPortfolio>
           </MainTitle>
         </MainContainer>
         <AboutContainer>abouts</AboutContainer>
@@ -56,7 +62,6 @@ const HomeContainer = styled.div`
   background: linear-gradient(0deg, skyblue, salmon);
   width: 100%;
   height: 500vh;
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
   overflow: hidden;
 `;
 
@@ -67,7 +72,7 @@ const MainContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #b7cadb;
+  background-color: white;
   transform: ${props => (props.positionYA > 800 ? `translateY(800px)` : `translateY(0px)`)};
   overflow: hidden;
 `;
@@ -84,19 +89,31 @@ const MainTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 const MainTitleText = styled.div`
-  width: 450px;
-  font-size: 48pt;
+  font-family: "Poppins", sans-serif;
+  width: 70%;
+  font-size: 6vw;
   white-space: normal;
   font-weight: 700;
   line-height: 1.1em;
 `;
 
+const MainTitleTextPortfolio = styled(MainTitleText)`
+  font-weight: 200;
+`;
+
+const GreetingContainer = styled.div`
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+`;
+
 const MainGreeting = styled.div`
-  width: 300px;
-  height: 500px;
   overflow: hidden;
 `;
 
@@ -106,8 +123,43 @@ const MainGreetingText = styled.div`
   transform: ${props => (props.positionYA > 10 ? `translateY(0%)` : `translateY(-10px)`)};
 `;
 
+const GreetingButton = styled.div`
+  padding: 0.75em 2em;
+  text-align: center;
+  text-decoration: none;
+  color: #2194e0;
+  border: 2px solid #2194e0;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover {
+    background-color: #2194e0;
+    color: #fff;
+    border-bottom: 4px solid darken(#2194e0, 10%);
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+`;
+
 const AboutContainer = styled.div`
-  margin-top: 100vh;
+  margin-top: 110vh;
   position: absolute;
   top: 100vh;
 `;

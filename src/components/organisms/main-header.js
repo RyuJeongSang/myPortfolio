@@ -17,12 +17,13 @@ const HeaderContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 40px;
-  background-color: #fff;
+  backdrop-filter: blur(10px);
   padding: 0 40px;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   z-index: 2;
+  border-bottom: 0.5px solid gray;
 `;
 
 const TextA = styled(Link)`
