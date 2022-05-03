@@ -19,8 +19,8 @@ const HeaderContainer = styled.div`
   height: 40px;
   backdrop-filter: blur(10px);
   padding: 0 40px;
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
-  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
   font-size: 16px;
   z-index: 2;
   border-bottom: 0.5px solid gray;

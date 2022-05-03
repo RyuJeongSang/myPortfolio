@@ -11,6 +11,11 @@ export const Home = () => {
     setOffsetY(window.pageYOffset);
   };
 
+  const moveToAbout = () => {
+    const scrollSize = window.innerHeight + 800;
+    window.scrollTo(0, scrollSize);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -41,7 +46,7 @@ export const Home = () => {
               <MainGreetingText positionYA={offsetY}>
                 저는 프론트엔드 개발자입니다.
               </MainGreetingText>
-              <GreetingButton>button</GreetingButton>
+              <GreetingButton onClick={() => moveToAbout()}>show more</GreetingButton>
             </MainGreeting>
           </GreetingContainer>
           <MainTitle positionYA={offsetY}>
@@ -120,7 +125,7 @@ const MainGreeting = styled.div`
 const MainGreetingText = styled.div`
   transition: all 1s ease-in-out;
   transition-delay: 0.1s;
-  transform: ${props => (props.positionYA > 10 ? `translateY(0%)` : `translateY(-10px)`)};
+  transform: ${props => (props.positionYA > 10 ? `translateY(0%)` : `translateY(100%)`)};
 `;
 
 const GreetingButton = styled.div`
