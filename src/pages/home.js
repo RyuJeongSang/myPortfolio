@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
+import { AboutPage } from "../components/organisms/about-page";
 import { MainHeader } from "../components/organisms/main-header";
 
 export const Home = () => {
@@ -33,7 +34,7 @@ export const Home = () => {
       <Helmet>
         <title>RyuJeongSang</title>
       </Helmet>
-      <MainHeader />
+      <MainHeader offsetY={offsetY} />
       <HomeContainer>
         <MainContainer positionYA={offsetY}>
           <GreetingContainer>
@@ -55,7 +56,9 @@ export const Home = () => {
             <MainTitleTextPortfolio>MY PORTFOLIO</MainTitleTextPortfolio>
           </MainTitle>
         </MainContainer>
-        <AboutContainer>abouts</AboutContainer>
+        <AboutContainer>
+          <AboutPage />
+        </AboutContainer>
         <div>projects</div>
         <div>contact</div>
       </HomeContainer>
@@ -77,7 +80,7 @@ const MainContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: #eee;
   transform: ${props => (props.positionYA > 800 ? `translateY(800px)` : `translateY(0px)`)};
   overflow: hidden;
 `;
@@ -167,4 +170,6 @@ const AboutContainer = styled.div`
   margin-top: 110vh;
   position: absolute;
   top: 100vh;
+  width: 100%;
+  height: 100%;
 `;

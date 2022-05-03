@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const MainHeader = () => {
+export const MainHeader = ({ offsetY }) => {
   return (
     <HeaderContainer>
-      <TextA to="/">RyuJeongSang</TextA>
+      <TextA to="/" scrollPosition={offsetY}>
+        RyuJeongSang
+      </TextA>
     </HeaderContainer>
   );
 };
@@ -27,11 +29,11 @@ const HeaderContainer = styled.div`
 `;
 
 const TextA = styled(Link)`
+  color: ${props => (props.scrollPosition > window.innerHeight + 820 ? `white` : `black`)};
   text-decoration: none;
-  color: black;
   transition: all 0.5s ease-in-out;
   :hover {
-    color: black;
+    color: ${props => (props.scrollPosition > window.innerHeight + 820 ? `white` : `black`)};
     transform: scale(110%);
   }
 `;
